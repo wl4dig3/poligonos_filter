@@ -18,16 +18,20 @@ document.getElementsByTagName('select')[0].addEventListener('change', function (
   // aplicando iterador
   let poligono = poligonos.filter((x) => x.id == Poligono)
 
-  if (poligono) {
-    console.log(`Perimetro del ${poligono[0].nombre} ===> ${poligono[0].perimetro()}`)
-    console.log(`Area del ${poligono[0].nombre} ===> ${poligono[0].area()}`)
-  } else {
-    console.log('No se encuentra ese poligono')
-  }
-  // poligonos.forEach((poligono) => {
-  //   if (Poligono == poligono.id) {
-  //     console.log(`Perimetro del ${poligono.nombre} ===> ${poligono.perimetro()}`)
-  //     console.log(`Area del ${poligono.nombre} ===> ${poligono.area()}`)
-  //   }
-  // })
+    // se asignan variables para luego imprimir 
+    let paragraph = document.getElementById("texto");
+    let paragraph2 = document.getElementById("texto2");
+
+  // if (poligono) {
+  //   console.log(`Perimetro del ${poligono[0].nombre} ===> ${poligono[0].perimetro()}`)
+  //   console.log(`Area del ${poligono[0].nombre} ===> ${poligono[0].area()}`)
+  // } else {
+  //   console.log('No se encuentra ese poligono')
+  // }
+  poligonos.forEach((poligono) => {
+    if (Poligono == poligono.id) {
+      paragraph.textContent  = (`Perimetro del ${poligono.nombre} es:  ${poligono.perimetro()}`)
+      paragraph2.textContent = (`Area del ${poligono.nombre} es:  ${poligono.area()}`)
+    }
+  })
 })
